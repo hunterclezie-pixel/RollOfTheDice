@@ -1,4 +1,11 @@
-﻿namespace RollOfTheDice
+﻿/* 
+Hunter Clezie 
+Spring 2026
+RCET2265
+RollOfTheDice
+github url: https://github.com/hunterclezie-pixel/RollOfTheDice.git
+*/
+namespace RollOfTheDice
 {
     internal class Program
     {
