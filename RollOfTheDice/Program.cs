@@ -8,7 +8,6 @@ github url: https://github.com/hunterclezie-pixel/RollOfTheDice.git
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Timers;
 using static System.Runtime.InteropServices.JavaScript.JSType;
-
 namespace RollOfTheDice
 {
     internal class Program
@@ -28,14 +27,14 @@ namespace RollOfTheDice
             }
 
             // Print the results:
-            //first line is the numbers 2-12
+            // First line is the numbers 2-12
             for (int i = 2; i <= 12; i++)
             {
                 Console.Write($"{i}".PadRight(4) + columnSeperator);
             }
             Console.WriteLine();
 
-            //second line is the number of times each number was rolled
+            // Second line is the number of times each number was rolled
             for (int i = 2; i <= 12; i++)
             {
                 Console.Write($"{rolls[i]}".PadRight(4) + columnSeperator);
