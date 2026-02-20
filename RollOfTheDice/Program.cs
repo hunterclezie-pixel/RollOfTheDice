@@ -5,6 +5,10 @@ RCET2265
 RollOfTheDice
 github url: https://github.com/hunterclezie-pixel/RollOfTheDice.git
 */
+using System.ComponentModel.DataAnnotations.Schema;
+using System.Timers;
+using static System.Runtime.InteropServices.JavaScript.JSType;
+
 namespace RollOfTheDice
 {
     internal class Program
@@ -13,6 +17,7 @@ namespace RollOfTheDice
         {
             Random rand = new Random(); //Constructor
             int[] rolls = new int[13]; // Array to count occurrences of each possible roll (2-12)
+            string columnSeperator = "|"; // String to separate columns in the output
 
             Console.WriteLine("Roll Of The Dice");
 
@@ -22,11 +27,20 @@ namespace RollOfTheDice
                 rolls[n]++; // Increment the count for this roll
             }
 
-            // Print the results
+            // Print the results:
+            //first line is the numbers 2-12
             for (int i = 2; i <= 12; i++)
             {
-                Console.WriteLine($"Number {i} rolled {rolls[i]} times.");
+                Console.Write($"{i}".PadRight(4) + columnSeperator);
             }
+            Console.WriteLine();
+
+            //second line is the number of times each number was rolled
+            for (int i = 2; i <= 12; i++)
+            {
+                Console.Write($"{rolls[i]}".PadRight(4) + columnSeperator);
+            }
+            Console.WriteLine();
 
             //pause
             Console.Read();
